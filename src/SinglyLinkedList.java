@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SinglyLinkedList {
 
 
@@ -5,16 +7,32 @@ public class SinglyLinkedList {
     private Node head = null;
     private int size = 0;
 
+    @Override
+    public String toString() {
+
+        StringBuilder result = new StringBuilder();
+        result.append("[");
+
+        Node temp = this.head;
+
+        while(temp.next != null)
+        {
+            result.append(temp.data);
+            temp = temp.next;
+        }
+
+
+        result.append("]");
+
+        return result.toString();
+    }
+
     public static void main(String[] args) {
 
+        SinglyLinkedList linkedList = new SinglyLinkedList();
+        System.out.println(linkedList);
     }
 
-
-
-    public SinglyLinkedList(Node head, int size) {
-        this.head = head;
-        this.size = size;
-    }
 
     private static class Node {
 

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class SinglyLinkedList {
 
 
@@ -7,29 +5,21 @@ public class SinglyLinkedList {
     private Node head = null;
     private int size = 0;
 
-    @Override
-    public String toString() {
+    //methode to add new node at head
+    public void insert(int value){
 
-        StringBuilder result = new StringBuilder();
-        result.append("[");
+       head = new Node(value, this.head);
+       size++;
 
-        Node temp = this.head;
-
-        while(temp.next != null)
-        {
-            result.append(temp.data);
-            temp = temp.next;
-        }
-
-
-        result.append("]");
-
-        return result.toString();
     }
+
 
     public static void main(String[] args) {
 
         SinglyLinkedList linkedList = new SinglyLinkedList();
+        linkedList.insert(44);
+        linkedList.insert(43);
+        linkedList.insert(42);
         System.out.println(linkedList);
     }
 
@@ -51,4 +41,30 @@ public class SinglyLinkedList {
         }
     }
 
+
+    @Override
+    public String toString() {
+
+        StringBuilder result = new StringBuilder();
+        result.append("[");
+
+        Node temp = this.head;
+
+        while(temp != null)
+        {
+            result.append(temp.data);
+            if (temp != null){
+                result.append(" ==> ");
+            }
+            temp = temp.next;
+        }
+
+
+        result.append("]");
+
+        return result.toString();
+    }
+
+
+    
 }

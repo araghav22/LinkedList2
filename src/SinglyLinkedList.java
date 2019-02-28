@@ -23,7 +23,6 @@ public class SinglyLinkedList {
         System.out.println(linkedList);
     }
 
-
     private static class Node {
 
         private int data;
